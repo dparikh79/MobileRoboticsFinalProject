@@ -1,0 +1,17 @@
+<launch>
+  <!-- Arguments -->
+  <arg name="model" default="burger"/>
+  <arg name="enable_raw" default="true"/>
+
+  <!-- Turtlebot3 Bringup -->
+  <include file="$(find turtlebot3_bringup)/launch/turtlebot3_robot.launch">
+  </include>
+
+  <!-- Raspicam -->
+  <include file="$(find raspicam_node)/launch/camerav2_1280x960_10fps.launch">
+    <arg name="enable_raw" value="$(arg enable_raw)"/>
+  </include>
+
+  <!-- Apriltag Detection -->
+  <include file="$(find turtlebot3_mr)/launch/apriltag_detection.launch"/>
+</launch>

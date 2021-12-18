@@ -1,0 +1,13 @@
+<launch>
+  <!-- Arguments -->
+  <arg name="model" default="burger"/>
+    
+  <!-- Gmapping -->
+    <include file="$(find my_navigation_pkg)/launch/gmapping.launch"/>
+    
+  <!-- Move Base -->
+    <include file="$(find my_navigation_pkg)/launch/exploration_move_base.launch"/>
+    
+  <!-- Explore Lite -->
+    <include file="$(find explore_lite)/launch/explore.launch"/>
+</launch>
